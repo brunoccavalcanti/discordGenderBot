@@ -27,15 +27,13 @@ bot.on('message', async (msg) => {
             bot.setTimeout(() => {
                 member.roles.add(role)
                 //console.log(msg.guild.roles) 
-            }, 30000)
+            }, 5000)
         }
         
     }
 })
 
 bot.on('message', async (msg) => {
-
-    
 
     const filter = (reaction) => {
         return reaction.emoji.name === '🚫';
