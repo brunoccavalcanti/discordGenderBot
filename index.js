@@ -42,7 +42,7 @@ bot.on('message', msg => {
     if(!msg.content.startsWith(prefix)) return;
 
     if(content.includes('help')){
-        msg.author.send('Me marque "@Gender Bot" e coloque uma frase na frente, vou corrigi-la pra você :)\nAssim você aprende a escrever direito seu misógino')
+        msg.author.send('Me marque "@Gender Bot" e coloque uma frase na frente, ou reaja com "🚫" na frase que você escolher que vou corrigi-la pra você :)\nAssim você aprende a escrever direito seu misógino\nFeito por Bruno Cavalcanti\nGithub: https://github.com/brunoccavalcanti')
     }
 
     else if(content.includes('creditos')){
@@ -60,7 +60,7 @@ bot.on('message', msg => {
         msg.reply("Ei amigue, tude bem?");
     }
 
-    else if(!(content.includes('o')) || !(content.includes('a'))){
+    else if(!(content.includes('o')) || !(content.includes('a')) || !(content.includes('help'))){
         msg.reply("Vece je escreveu cem genere neutre, perebens");
     }
 })
