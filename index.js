@@ -46,6 +46,10 @@ bot.on('message', msg => {
         msg.reply('Criado por Bruno Cavalcanti')
     }
 
+    else if(content.includes('help')){
+        msg.author.send('me marque "@Gender Bot" e coloque uma frase na frente, vou corrigila pra você :)\nAssim você aprende a escrever direito seu misógeno')
+    }
+
     else if(content.includes('o') || content.includes('a')){
         let newMsg = content.replace("<@!757681809965187143>", "");
         let newMsg2 = newMsg.replace(/a/g, "e")
