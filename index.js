@@ -10,13 +10,37 @@ bot.login(token)
 
 bot.on('ready', () => console.log('O pai ta on'))
 
-bot.on('message', msg => {
+bot.on('message', async (msg) => {
+
+    var contentAux = msg.content.toLowerCase()
+    var content = contentAux.normalize("NFD").replace(/[\u0300-\u036f]/g, '');
+
+    if(content.includes('mute')){
+        const role = msg.guild.roles.cache.find(role => role.id === '285831986998935552');
+        const member = msg.mentions.members.last();
+
+        if(member.id === '302172430024179722'){
+
+            member.roles.remove(role) 
+            //console.log(member.id)
+
+            bot.setTimeout(() => {
+                member.roles.add(role)
+                //console.log(msg.guild.roles) 
+            }, 30000)
+        }
+        
+    }
+})
+
+bot.on('message', async (msg) => {
+
+    
 
     const filter = (reaction) => {
         return reaction.emoji.name === '🚫';
     };
-    console.log(msg)
-    
+
     const collector = msg.createReactionCollector(filter, { time: 600000 });
     
     collector.on('collect', (reaction,) => {
@@ -45,11 +69,6 @@ bot.on('message', msg => {
     if(content.includes('help')){
         msg.author.send('Me marque "@Gender Bot" e coloque uma frase na frente, ou reaja com "🚫" na frase que você escolher que vou corrigi-la pra você :)\nAssim você aprende a escrever direito seu misógino\nFeito por Bruno Cavalcanti\nGithub: https://github.com/brunoccavalcanti')
     }
-
-    /*else if(content.includes('mute') && content.includes('<!302172430024179722>')){
-        console.log(msg)
-        //Discord.GuildMember.add("")
-    }*/
 
     else if(content.includes('creditos')){
         msg.reply('Criado por Bruno Cavalcanti')
