@@ -27,7 +27,7 @@ bot.on('message', async (msg) => {
             bot.setTimeout(() => {
                 member.roles.add(role)
                 //console.log(msg.guild.roles) 
-            }, 5000)
+            }, 30000)
         }
         
     }
