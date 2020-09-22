@@ -60,7 +60,7 @@ bot.on('message', msg => {
         msg.reply("Ei amigue, tude bem?");
     }
 
-    else{
+    else if(!(content.includes('o')) || !(content.includes('a'))){
         msg.reply("Vece je escreveu cem genere neutre, perebens");
     }
 })
