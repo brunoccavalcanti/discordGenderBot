@@ -64,15 +64,7 @@ bot.on('message', async (msg) => {
     if(msg.author.bot)return;
     if(!msg.content.startsWith(prefix)) return;
 
-    if(content.includes('help')){
-        try{
-            msg.author.send('Me marque "@Gender Bot" e coloque uma frase na frente, ou reaja com "🚫" na frase que você escolher que vou corrigi-la pra você :)\nAssim você aprende a escrever direito seu misógino\nFeito por Bruno Cavalcanti\nGithub: https://github.com/brunoccavalcanti')
-        }catch(e){
-            console.log(e)
-        }
-    }
-
-    else if(content.includes('creditos')){
+    if(content.includes('creditos')){
         try{
             msg.reply('Criado por Bruno Cavalcanti')
         }catch(e){
