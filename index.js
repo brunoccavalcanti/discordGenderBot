@@ -42,14 +42,14 @@ bot.on('message', msg => {
     if(!msg.content.startsWith(prefix)) return;
 
     if(content.includes('help')){
-        msg.author.send('me marque "@Gender Bot" e coloque uma frase na frente, vou corrigi-la pra você :)\nAssim você aprende a escrever direito seu misógino')
+        msg.author.send('Me marque "@Gender Bot" e coloque uma frase na frente, vou corrigi-la pra você :)\nAssim você aprende a escrever direito seu misógino')
     }
 
     else if(content.includes('creditos')){
         msg.reply('Criado por Bruno Cavalcanti')
     }
 
-    else if(content.includes('o') || content.includes('a')){
+    else if(content.includes('o') || content.includes('a') && !(content.includes('help'))){
         let newMsg = content.replace("<@!757681809965187143>", "");
         let newMsg2 = newMsg.replace(/a/g, "e")
         msg.reply(newMsg2.replace(/o/g, "e"));
