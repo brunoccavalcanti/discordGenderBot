@@ -15,6 +15,7 @@ bot.on('message', msg => {
     const filter = (reaction) => {
         return reaction.emoji.name === '🚫';
     };
+    console.log(msg)
     
     const collector = msg.createReactionCollector(filter, { time: 600000 });
     
@@ -44,6 +45,11 @@ bot.on('message', msg => {
     if(content.includes('help')){
         msg.author.send('Me marque "@Gender Bot" e coloque uma frase na frente, ou reaja com "🚫" na frase que você escolher que vou corrigi-la pra você :)\nAssim você aprende a escrever direito seu misógino\nFeito por Bruno Cavalcanti\nGithub: https://github.com/brunoccavalcanti')
     }
+
+    /*else if(content.includes('mute') && content.includes('<!302172430024179722>')){
+        console.log(msg)
+        //Discord.GuildMember.add("")
+    }*/
 
     else if(content.includes('creditos')){
         msg.reply('Criado por Bruno Cavalcanti')
