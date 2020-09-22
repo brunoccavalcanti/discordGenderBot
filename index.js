@@ -65,25 +65,45 @@ bot.on('message', async (msg) => {
     if(!msg.content.startsWith(prefix)) return;
 
     if(content.includes('help')){
-        msg.author.send('Me marque "@Gender Bot" e coloque uma frase na frente, ou reaja com "🚫" na frase que você escolher que vou corrigi-la pra você :)\nAssim você aprende a escrever direito seu misógino\nFeito por Bruno Cavalcanti\nGithub: https://github.com/brunoccavalcanti')
+        try{
+            msg.author.send('Me marque "@Gender Bot" e coloque uma frase na frente, ou reaja com "🚫" na frase que você escolher que vou corrigi-la pra você :)\nAssim você aprende a escrever direito seu misógino\nFeito por Bruno Cavalcanti\nGithub: https://github.com/brunoccavalcanti')
+        }catch(e){
+            console.log(e)
+        }
     }
 
     else if(content.includes('creditos')){
-        msg.reply('Criado por Bruno Cavalcanti')
+        try{
+            msg.reply('Criado por Bruno Cavalcanti')
+        }catch(e){
+            console.log(e)
+        }
     }
 
     else if(content.includes('o') || content.includes('a') && !(content.includes('help'))){
-        let newMsg = content.replace("<@!757681809965187143>", "");
-        let newMsg2 = newMsg.replace(/a/g, "e")
-        msg.reply(newMsg2.replace(/o/g, "e"));
-        console.log(newMsg);
+        try{
+            let newMsg = content.replace("<@!757681809965187143>", "");
+            let newMsg2 = newMsg.replace(/a/g, "e")
+            msg.reply(newMsg2.replace(/o/g, "e"));
+            console.log(newMsg);
+        }catch(e){
+            console.log(e)
+        }
     }
 
     else if(content.includes('ei') || content.includes('emigue')){
-        msg.reply("Ei amigue, tude bem?");
+        try{
+            msg.reply("Ei amigue, tude bem?");
+        }catch(e){
+            console.log(e)
+        }
     }
 
     else if(!(content.includes('o')) || !(content.includes('a')) && !(content.includes('help'))){
-        msg.reply("Vece je escreveu cem genere neutre, perebens");
+        try{
+            msg.reply("Vece je escreveu cem genere neutre, perebens");            
+        }catch(e){
+            console.log(e)
+        }
     }
 })
