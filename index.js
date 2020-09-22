@@ -46,8 +46,8 @@ bot.on('message', msg => {
         msg.reply('Criado por Bruno Cavalcanti')
     }
 
-    else if(content.includes('help')){
-        msg.author.send('me marque "@Gender Bot" e coloque uma frase na frente, vou corrigila pra você :)\nAssim você aprende a escrever direito seu misógeno')
+    if(content.includes('help')){
+        msg.author.send('me marque "@Gender Bot" e coloque uma frase na frente, vou corrigi-la pra você :)\nAssim você aprende a escrever direito seu misógino')
     }
 
     else if(content.includes('o') || content.includes('a')){
